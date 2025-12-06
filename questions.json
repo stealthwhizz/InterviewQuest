@@ -1,0 +1,214 @@
+{
+  "questions": [
+    {
+      "id": "junior-behavioral-1",
+      "level": "junior",
+      "type": "behavioral",
+      "text": "Tell me about a time when you had to learn a new technology quickly. How did you approach it?",
+      "hints": ["Focus on your learning process", "Mention resources you used", "Describe the outcome"]
+    },
+    {
+      "id": "junior-behavioral-2",
+      "level": "junior",
+      "type": "behavioral",
+      "text": "Describe a situation where you received constructive criticism. How did you handle it?",
+      "hints": ["Show openness to feedback", "Explain what you learned", "Demonstrate growth mindset"]
+    },
+    {
+      "id": "junior-behavioral-3",
+      "level": "junior",
+      "type": "behavioral",
+      "text": "Tell me about a project you're proud of. What was your role and what did you accomplish?",
+      "hints": ["Be specific about your contributions", "Mention technologies used", "Quantify impact if possible"]
+    },
+    {
+      "id": "junior-technical-1",
+      "level": "junior",
+      "type": "technical",
+      "text": "What is the difference between let, const, and var in JavaScript?",
+      "hints": ["Discuss scope differences", "Mention hoisting behavior", "Explain when to use each"]
+    },
+    {
+      "id": "junior-technical-2",
+      "level": "junior",
+      "type": "technical",
+      "text": "Explain what REST APIs are and how they work.",
+      "hints": ["Define REST principles", "Mention HTTP methods", "Discuss request/response structure"]
+    },
+    {
+      "id": "junior-technical-3",
+      "level": "junior",
+      "type": "technical",
+      "text": "What is the difference between == and === in JavaScript?",
+      "hints": ["Explain type coercion", "Provide examples", "Discuss best practices"]
+    },
+    {
+      "id": "junior-technical-4",
+      "level": "junior",
+      "type": "technical",
+      "text": "What is Git and why is version control important?",
+      "hints": ["Explain version control benefits", "Mention common Git commands", "Discuss collaboration aspects"]
+    },
+    {
+      "id": "junior-system-design-1",
+      "level": "junior",
+      "type": "system-design",
+      "text": "How would you design a simple todo list application?",
+      "hints": ["Describe data structure", "Mention CRUD operations", "Discuss storage options"]
+    },
+    {
+      "id": "junior-system-design-2",
+      "level": "junior",
+      "type": "system-design",
+      "text": "Explain how you would structure a basic blog website with posts and comments.",
+      "hints": ["Define data models", "Discuss relationships", "Mention basic features"]
+    },
+    {
+      "id": "junior-system-design-3",
+      "level": "junior",
+      "type": "system-design",
+      "text": "How would you implement user authentication in a web application?",
+      "hints": ["Discuss password storage", "Mention session management", "Consider security basics"]
+    },
+    {
+      "id": "senior-behavioral-1",
+      "level": "senior",
+      "type": "behavioral",
+      "text": "Describe a time when you had to make a difficult technical decision with incomplete information. How did you approach it?",
+      "hints": ["Explain your decision-making process", "Discuss trade-offs considered", "Describe the outcome and lessons learned"]
+    },
+    {
+      "id": "senior-behavioral-2",
+      "level": "senior",
+      "type": "behavioral",
+      "text": "Tell me about a time when you mentored a junior developer. What was your approach and what did they learn?",
+      "hints": ["Describe your mentoring style", "Give specific examples", "Discuss impact on their growth"]
+    },
+    {
+      "id": "senior-behavioral-3",
+      "level": "senior",
+      "type": "behavioral",
+      "text": "Describe a situation where you had to refactor a large codebase. What was your strategy?",
+      "hints": ["Explain planning process", "Discuss risk mitigation", "Mention testing strategy"]
+    },
+    {
+      "id": "senior-technical-1",
+      "level": "senior",
+      "type": "technical",
+      "text": "Explain the event loop in JavaScript and how asynchronous operations work.",
+      "hints": ["Describe call stack and callback queue", "Mention microtasks vs macrotasks", "Discuss async/await"]
+    },
+    {
+      "id": "senior-technical-2",
+      "level": "senior",
+      "type": "technical",
+      "text": "What are the trade-offs between SQL and NoSQL databases? When would you choose each?",
+      "hints": ["Discuss ACID vs BASE", "Mention scalability patterns", "Give real-world use cases"]
+    },
+    {
+      "id": "senior-technical-3",
+      "level": "senior",
+      "type": "technical",
+      "text": "Explain different caching strategies and when to use each one.",
+      "hints": ["Discuss cache-aside, write-through, write-behind", "Mention invalidation strategies", "Consider consistency trade-offs"]
+    },
+    {
+      "id": "senior-technical-4",
+      "level": "senior",
+      "type": "technical",
+      "text": "How would you optimize the performance of a slow database query?",
+      "hints": ["Discuss indexing strategies", "Mention query analysis tools", "Consider denormalization trade-offs"]
+    },
+    {
+      "id": "senior-system-design-1",
+      "level": "senior",
+      "type": "system-design",
+      "text": "Design a URL shortening service like bit.ly. How would you handle scale?",
+      "hints": ["Discuss URL generation algorithm", "Mention database design", "Consider caching and CDN"]
+    },
+    {
+      "id": "senior-system-design-2",
+      "level": "senior",
+      "type": "system-design",
+      "text": "How would you design a real-time chat application that supports millions of users?",
+      "hints": ["Discuss WebSocket vs polling", "Mention message queue architecture", "Consider data partitioning"]
+    },
+    {
+      "id": "senior-system-design-3",
+      "level": "senior",
+      "type": "system-design",
+      "text": "Design a rate limiting system for an API. What algorithms would you use?",
+      "hints": ["Explain token bucket, leaky bucket", "Discuss distributed rate limiting", "Consider edge cases"]
+    },
+    {
+      "id": "faang-behavioral-1",
+      "level": "faang",
+      "type": "behavioral",
+      "text": "Tell me about the most complex system you've designed. What were the key challenges and how did you overcome them?",
+      "hints": ["Discuss system complexity", "Explain architectural decisions", "Quantify impact and scale"]
+    },
+    {
+      "id": "faang-behavioral-2",
+      "level": "faang",
+      "type": "behavioral",
+      "text": "Describe a time when you had to influence a team to adopt a new technology or practice without having direct authority.",
+      "hints": ["Explain persuasion strategy", "Discuss stakeholder management", "Describe long-term impact"]
+    },
+    {
+      "id": "faang-behavioral-3",
+      "level": "faang",
+      "type": "behavioral",
+      "text": "Tell me about a time when you had to make a decision that balanced technical excellence with business needs.",
+      "hints": ["Discuss competing priorities", "Explain decision framework", "Describe stakeholder communication"]
+    },
+    {
+      "id": "faang-technical-1",
+      "level": "faang",
+      "type": "technical",
+      "text": "Explain how you would design a distributed consensus system. What are the CAP theorem trade-offs?",
+      "hints": ["Discuss Paxos or Raft", "Explain consistency models", "Consider partition tolerance"]
+    },
+    {
+      "id": "faang-technical-2",
+      "level": "faang",
+      "type": "technical",
+      "text": "How would you implement a distributed transaction across multiple microservices?",
+      "hints": ["Discuss saga pattern", "Mention 2PC limitations", "Consider eventual consistency"]
+    },
+    {
+      "id": "faang-technical-3",
+      "level": "faang",
+      "type": "technical",
+      "text": "Explain different load balancing algorithms and their trade-offs in a distributed system.",
+      "hints": ["Discuss round-robin, least connections, consistent hashing", "Mention health checks", "Consider stateful vs stateless"]
+    },
+    {
+      "id": "faang-technical-4",
+      "level": "faang",
+      "type": "technical",
+      "text": "How would you design a monitoring and alerting system for a large-scale distributed application?",
+      "hints": ["Discuss metrics collection", "Mention time-series databases", "Consider alert fatigue"]
+    },
+    {
+      "id": "faang-system-design-1",
+      "level": "faang",
+      "type": "system-design",
+      "text": "Design YouTube. How would you handle video upload, processing, storage, and streaming at scale?",
+      "hints": ["Discuss CDN architecture", "Mention video transcoding pipeline", "Consider storage optimization"]
+    },
+    {
+      "id": "faang-system-design-2",
+      "level": "faang",
+      "type": "system-design",
+      "text": "Design a global content delivery network (CDN). How would you optimize for latency and availability?",
+      "hints": ["Discuss edge locations", "Mention cache invalidation", "Consider routing algorithms"]
+    },
+    {
+      "id": "faang-system-design-3",
+      "level": "faang",
+      "type": "system-design",
+      "text": "Design a distributed search engine like Google. How would you handle indexing, ranking, and query processing?",
+      "hints": ["Discuss inverted index", "Mention PageRank or similar", "Consider sharding strategy"]
+    }
+  ]
+}
