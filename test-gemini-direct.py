@@ -6,7 +6,7 @@ Test Gemini API directly with the same prompt as Lambda
 import urllib.request
 import json
 
-GOOGLE_API_KEY = "AIzaSyCd1gs8cjr_zXJM9-vSTwYqbZeMKJDaqCI"
+GOOGLE_API_KEY = "YOUR_API_KEY_HERE"  # Replace with your actual key locally
 MODEL_NAME = "gemini-2.5-flash"
 
 # Same prompt as Lambda uses

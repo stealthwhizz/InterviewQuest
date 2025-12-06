@@ -8,7 +8,7 @@ import requests
 import json
 
 # Your bearer token
-BEARER_TOKEN = "ABSKQmVkcm9ja0FQSUtleS1xbzdqLWF0LTI5MjM0MzgyNjAwNDpsaGRrKzdZYWI1MFVaazkzaHlwZ0FOc1E0NnJmaXBiMTAwVzFpajNuZWNqamUwR0VGUWRDR1o3SjRKcz0="
+BEARER_TOKEN = "YOUR_BEARER_TOKEN_HERE"  # Replace with your actual token locally
 
 # Bedrock API endpoint (adjust region if needed)
 REGION = "ap-south-1"

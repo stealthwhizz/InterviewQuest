@@ -10,8 +10,8 @@ import json
 
 print("🧪 Testing Google Gemini API...\n")
 
-# Your Google API Key
-GOOGLE_API_KEY = "AIzaSyCd1gs8cjr_zXJM9-vSTwYqbZeMKJDaqCI"
+# Your Google API Key - DO NOT COMMIT THIS FILE WITH REAL KEY
+GOOGLE_API_KEY = "YOUR_API_KEY_HERE"  # Replace with your actual key locally
 
 print(f"API Key: {GOOGLE_API_KEY[:10]}...\n")
 
