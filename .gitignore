@@ -64,12 +64,15 @@ venv/
 ENV/
 .venv
 
-# Test files with sensitive data
+# Test files with sensitive data (NEVER commit these!)
 test-*-credentials.py
+test-bearer-token.py
+test-gemini-*.py
 decode-bearer-token.py
 list-gemini-models.py
+fix-git-secrets.sh
 
-# Documentation that may contain keys
+# Documentation that may contain keys (NEVER commit these!)
 *BEARER_TOKEN*.md
 *CREDENTIALS*.md
 *API_KEY*.md
@@ -79,6 +82,7 @@ QUICK_START_CREDENTIALS.md
 BEARER_TOKEN_SETUP.md
 LAMBDA_UPDATE_REQUIRED.md
 FINAL_SETUP_INSTRUCTIONS.md
+SECURITY_FIX_URGENT.md
 
 # Keep these documentation files
 !README.md
