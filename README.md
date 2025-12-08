@@ -6,7 +6,7 @@ Practice interview questions, defeat boss levels, and level up your skills in th
 
 🎮 **[Play Now](https://stealthwhizz.github.io/InterviewQuest/)** (Update with your actual URL)
 
-![InterviewQuest Banner](C:\Users\whizy\GitHub\InterviewQuest\unnamed (2).jpg) 
+![InterviewQuest Banner](unnamed%20(2).jpg) 
 
 ## ✨ Features
 
