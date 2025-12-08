@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewQuest - Deployment Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e8e9ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: rgba(26, 31, 46, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4a9eff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(45, 55, 72, 0.5);
+            border-radius: 8px;
+            border-left: 4px solid #4a9eff;
+        }
+        
+        .test-item.success {
+            border-left-color: #10b981;
+        }
+        
+        .test-item.error {
+            border-left-color: #ef4444;
+        }
+        
+        .test-item.pending {
+            border-left-color: #f59e0b;
+        }
+        
+        .status {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .success .status { color: #10b981; }
+        .error .status { color: #ef4444; }
+        .pending .status { color: #f59e0b; }
+        
+        button {
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .info {
+            background: rgba(74, 158, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid rgba(74, 158, 255, 0.3);
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #4a9eff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.6s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 InterviewQuest Deployment Test</h1>
+        <p style="margin-bottom: 20px; color: #8b92a8;">
+            This page tests if your deployment is working correctly.
+        </p>
+        
+        <div class="info">
+            <strong>📍 Current URL:</strong> <code id="current-url"></code>
+        </div>
+        
+        <div id="test-results">
+            <div class="test-item pending" id="test-files">
+                <div class="status">⏳ Testing: Files Accessible</div>
+                <div class="details">Checking if index.html and questions.json are accessible...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-api">
+                <div class="status">⏳ Testing: API Connection</div>
+                <div class="details">Testing Lambda API endpoint...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-storage">
+                <div class="status">⏳ Testing: LocalStorage</div>
+                <div class="details">Checking if browser storage is working...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-canvas">
+                <div class="status">⏳ Testing: Canvas API</div>
+                <div class="details">Checking if victory cards can be generated...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-speech">
+                <div class="status">⏳ Testing: Voice Input</div>
+                <div class="details">Checking if Web Speech API is available...</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <button onclick="runTests()">🔄 Run Tests</button>
+            <button onclick="window.location.href='index.html'">🎮 Go to Game</button>
+        </div>
+        
+        <div class="info" style="margin-top: 30px;">
+            <strong>✅ All tests passed?</strong> Your deployment is working!<br>
+            <strong>❌ Some tests failed?</strong> Check the error messages above.
+        </div>
+    </div>
+    
+    <script>
+        const API_ENDPOINT = 'https://s0v99eipni.execute-api.ap-south-1.amazonaws.com/prod/evaluate-answer';
+        
+        // Display current URL
+        document.getElementById('current-url').textContent = window.location.href;
+        
+        function updateTest(id, status, message) {
+            const element = document.getElementById(id);
+            element.className = `test-item ${status}`;
+            
+            const statusText = status === 'success' ? '✅ Passed' : 
+                              status === 'error' ? '❌ Failed' : 
+                              '⏳ Testing';
+            
+            element.querySelector('.status').textContent = `${statusText}: ${element.querySelector('.status').textContent.split(': ')[1]}`;
+            element.querySelector('.details').textContent = message;
+        }
+        
+        async function testFiles() {
+            try {
+                // Test questions.json
+                const response = await fetch('./questions.json');
+                if (!response.ok) throw new Error('questions.json not found');
+                
+                const data = await response.json();
+                if (!data.questions || !Array.isArray(data.questions)) {
+                    throw new Error('Invalid questions.json format');
+                }
+                
+                updateTest('test-files', 'success', 
+                    `✓ Found ${data.questions.length} questions in questions.json`);
+                return true;
+            } catch (error) {
+                updateTest('test-files', 'error', 
+                    `✗ Error: ${error.message}. Make sure questions.json is in the same folder as index.html`);
+                return false;
+            }
+        }
+        
+        async function testAPI() {
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: "Test question",
+                        answer: "Test answer for deployment verification",
+                        difficulty: "junior"
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.score || !data.strengths || !data.improvements) {
+                    throw new Error('Invalid API response format');
+                }
+                
+                updateTest('test-api', 'success', 
+                    `✓ API working! Received score: ${data.score}/10`);
+                return true;
+            } catch (error) {
+                updateTest('test-api', 'error', 
+                    `✗ API Error: ${error.message}. Check if Lambda function is configured correctly.`);
+                return false;
+            }
+        }
+        
+        function testStorage() {
+            try {
+                const testKey = 'interviewquest_test';
+                const testValue = 'deployment_test';
+                
+                localStorage.setItem(testKey, testValue);
+                const retrieved = localStorage.getItem(testKey);
+                localStorage.removeItem(testKey);
+                
+                if (retrieved !== testValue) {
+                    throw new Error('Storage read/write mismatch');
+                }
+                
+                updateTest('test-storage', 'success', 
+                    '✓ LocalStorage working correctly');
+                return true;
+            } catch (error) {
+                updateTest('test-storage', 'error', 
+                    `✗ Storage Error: ${error.message}. Progress won't be saved.`);
+                return false;
+            }
+        }
+        
+        function testCanvas() {
+            try {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                if (!ctx) {
+                    throw new Error('Canvas 2D context not available');
+                }
+                
+                // Test basic drawing
+                ctx.fillStyle = '#1a73e8';
+                ctx.fillRect(0, 0, 100, 100);
+                
+                updateTest('test-canvas', 'success', 
+                    '✓ Canvas API working - Victory cards will generate');
+                return true;
+            } catch (error) {
+                updateTest('test-canvas', 'error', 
+                    `✗ Canvas Error: ${error.message}. Victory cards won't work.`);
+                return false;
+            }
+        }
+        
+        function testSpeech() {
+            try {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                
+                if (!SpeechRecognition) {
+                    throw new Error('Web Speech API not supported in this browser');
+                }
+                
+                updateTest('test-speech', 'success', 
+                    '✓ Voice input available (Web Speech API supported)');
+                return true;
+            } catch (error) {
+                updateTest('test-speech', 'error', 
+                    `✗ Voice input not available: ${error.message}`);
+                return false;
+            }
+        }
+        
+        async function runTests() {
+            console.log('🧪 Running deployment tests...');
+            
+            // Reset all tests to pending
+            ['test-files', 'test-api', 'test-storage', 'test-canvas', 'test-speech'].forEach(id => {
+                const element = document.getElementById(id);
+                element.className = 'test-item pending';
+            });
+            
+            // Run tests sequentially
+            const results = {
+                files: await testFiles(),
+                storage: testStorage(),
+                canvas: testCanvas(),
+                speech: testSpeech(),
+                api: await testAPI()
+            };
+            
+            // Log results
+            console.log('Test Results:', results);
+            
+            const allPassed = Object.values(results).every(r => r === true);
+            
+            if (allPassed) {
+                console.log('✅ All tests passed! Deployment is working correctly.');
+            } else {
+                console.log('⚠️ Some tests failed. Check the results above.');
+            }
+            
+            return results;
+        }
+        
+        // Auto-run tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(runTests, 500);
+        });
+    </script>
+</body>
+</html>
