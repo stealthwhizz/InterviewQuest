@@ -4,9 +4,9 @@
 
 Practice interview questions, defeat boss levels, and level up your skills in this engaging game that makes interview preparation fun!
 
-🎮 **[Play Now](https://YOUR_USERNAME.github.io/InterviewQuest/)** (Update with your actual URL)
+🎮 **[Play Now](https://stealthwhizz.github.io/InterviewQuest/)** (Update with your actual URL)
 
-![InterviewQuest Banner](https://via.placeholder.com/800x400/1a73e8/ffffff?text=InterviewQuest) <!-- Replace with actual screenshot -->
+![InterviewQuest Banner](C:\Users\whizy\GitHub\InterviewQuest\unnamed (2).jpg) 
 
 ## ✨ Features
 
